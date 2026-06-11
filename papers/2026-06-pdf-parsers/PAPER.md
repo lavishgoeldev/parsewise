@@ -177,43 +177,43 @@ On 30 real US-government PDFs the five parser configurations partition into thre
 | pdfplumber-tuned vs pypdf | **0.002 [0.002, 0.003]** | 0.026 [0.019, 0.033] | within Cluster A |
 | pdfplumber-tuned vs PyMuPDF | **0.006 [0.002, 0.011]** | 0.011 [0.007, 0.016] | within Cluster A |
 | PyMuPDF vs pypdf | **0.008 [0.004, 0.013]** | 0.031 [0.022, 0.040] | within Cluster A |
-| PyMuPDF vs pdfminer | **0.200 [0.143, 0.260]** | 0.253 [0.184, 0.326] | A ↔ B boundary |
-| pypdf vs pdfminer | **0.198 [0.141, 0.258]** | 0.257 [0.189, 0.328] | A ↔ B boundary |
-| pdfplumber-tuned vs pdfminer | **0.197 [0.140, 0.258]** | 0.247 [0.177, 0.321] | A ↔ B boundary |
-| pdfplumber vs pdfminer | **0.353 [0.258, 0.446]** | 0.430 [0.315, 0.543] | C ↔ B boundary |
-| PyMuPDF vs pdfplumber (default) | **0.373 [0.278, 0.463]** | 0.443 [0.328, 0.555] | A ↔ C boundary |
-| pdfplumber vs pypdf | **0.371 [0.277, 0.461]** | 0.446 [0.331, 0.558] | A ↔ C boundary |
+| PyMuPDF vs pdfminer | **0.200 [0.143, 0.260]** | 0.253 [0.184, 0.326] | A vs B boundary |
+| pypdf vs pdfminer | **0.198 [0.141, 0.258]** | 0.257 [0.189, 0.328] | A vs B boundary |
+| pdfplumber-tuned vs pdfminer | **0.197 [0.140, 0.258]** | 0.247 [0.177, 0.321] | A vs B boundary |
+| pdfplumber vs pdfminer | **0.353 [0.258, 0.446]** | 0.430 [0.315, 0.543] | C vs B boundary |
+| PyMuPDF vs pdfplumber (default) | **0.373 [0.278, 0.463]** | 0.443 [0.328, 0.555] | A vs C boundary |
+| pdfplumber vs pypdf | **0.371 [0.277, 0.461]** | 0.446 [0.331, 0.558] | A vs C boundary |
 
 Two implications follow immediately:
 
 * The two pdfplumber configurations (default and tuned) disagree with *each other* at CER 0.371 — i.e. on the same input PDFs, changing three keyword arguments produces text that disagrees with the default by as much as switching to PyMuPDF.
 * The default-pdfplumber divergence (Cluster C) is not a quality issue. *Tuned* pdfplumber sits on top of *exactly* the same C library as default pdfplumber and joins Cluster A. The problem is the default-config reading-order heuristic, not the underlying parser.
 
-### 6.3 Layout complexity drives the A↔C divergence
+### 6.3 Layout complexity drives the A-vs-C divergence
 
-A per-document scatter of layout-complexity score against pairwise CER (Figure 1) shows the A ↔ C divergence is concentrated in layout-complex documents. Per pair, Pearson correlations:
+A per-document scatter of layout-complexity score against pairwise CER (Figure 1) shows the A vs C divergence is concentrated in layout-complex documents. Per pair, Pearson correlations:
 
 | Comparison | Cluster pair | Pearson r | Spearman ρ |
 |---|---|---|---|
-| PyMuPDF vs default pdfplumber | A ↔ C | **0.80** | 0.66 |
-| pypdf vs default pdfplumber | A ↔ C | **0.80** | 0.64 |
-| default pdfplumber vs pdfminer | C ↔ B | 0.70 | 0.62 |
-| default pdfplumber vs *tuned* pdfplumber | C ↔ A | 0.80 | 0.64 |
-| pdfminer vs PyMuPDF | A ↔ B | 0.48 | 0.43 |
-| pdfminer vs pypdf | A ↔ B | 0.47 | 0.41 |
-| pdfminer vs tuned pdfplumber | A ↔ B | 0.47 | 0.41 |
+| PyMuPDF vs default pdfplumber | A vs C | **0.80** | 0.66 |
+| pypdf vs default pdfplumber | A vs C | **0.80** | 0.64 |
+| default pdfplumber vs pdfminer | C vs B | 0.70 | 0.62 |
+| default pdfplumber vs *tuned* pdfplumber | C vs A | 0.80 | 0.64 |
+| pdfminer vs PyMuPDF | A vs B | 0.48 | 0.43 |
+| pdfminer vs pypdf | A vs B | 0.47 | 0.41 |
+| pdfminer vs tuned pdfplumber | A vs B | 0.47 | 0.41 |
 | PyMuPDF vs pypdf | within A | 0.22 | 0.08 |
 | PyMuPDF vs tuned pdfplumber | within A | 0.22 | 0.18 |
 
 Three regimes are visible:
 
 1. **Within Cluster A** (top of table), the correlation with layout complexity is essentially zero. The three Cluster-A parsers agree at the normalization floor across the complexity range — there is no layout where they meaningfully disagree.
-2. **A ↔ B boundary** (mid-table), the correlation is moderate (r ≈ 0.47). pdfminer's modest disagreement with Cluster A grows with complexity but does not blow up.
-3. **A ↔ C boundary** (bottom rows of the high-r section), the correlation is strong (r ≈ 0.80). Layout complexity is the dominant driver of default-pdfplumber's divergence; on the simplest layouts the gap nearly vanishes.
+2. **A vs B boundary** (mid-table), the correlation is moderate (r ≈ 0.47). pdfminer's modest disagreement with Cluster A grows with complexity but does not blow up.
+3. **A vs C boundary** (bottom rows of the high-r section), the correlation is strong (r ≈ 0.80). Layout complexity is the dominant driver of default-pdfplumber's divergence; on the simplest layouts the gap nearly vanishes.
 
 **Per category** the story is cleanest:
 
-| Category | n | A-internal: PyMuPDF vs pypdf | A ↔ B: PyMuPDF vs pdfminer | A ↔ C: PyMuPDF vs default pdfplumber |
+| Category | n | A-internal: PyMuPDF vs pypdf | A vs B: PyMuPDF vs pdfminer | A vs C: PyMuPDF vs default pdfplumber |
 |---|---|---|---|---|
 | Legal (SCOTUS opinions) | 4 | 0.005 [0.003, 0.006] | 0.008 [0.003, 0.011] | 0.007 [0.002, 0.011] |
 | Housing (HUD leases + 1 form) | 4 | 0.000 [0.000, 0.000] | 0.047 [0.033, 0.061] | 0.200 [0.032, 0.523] |
@@ -221,7 +221,7 @@ Three regimes are visible:
 | Immigration (USCIS forms) | 8 | 0.005 [0.003, 0.007] | 0.399 [0.292, 0.481] | 0.431 [0.285, 0.548] |
 | Medical (CDC MMWR) | 6 | 0.007 [0.003, 0.013] | 0.146 [0.129, 0.164] | 0.583 [0.546, 0.622] |
 
-On single-column legal opinions all three cluster boundaries collapse: every pair agrees at the normalization floor. On multi-column scientific publications the A ↔ C gap reaches CER 0.58, and the A ↔ B gap settles at a stable 0.15. The shape of the divergence as a function of complexity is therefore not just "bigger for complex layouts," it is *qualitatively different across cluster boundaries*: A ↔ B is roughly constant, A ↔ C is roughly linear.
+On single-column legal opinions all three cluster boundaries collapse: every pair agrees at the normalization floor. On multi-column scientific publications the A vs C gap reaches CER 0.58, and the A vs B gap settles at a stable 0.15. The shape of the divergence as a function of complexity is therefore not just "bigger for complex layouts," it is *qualitatively different across cluster boundaries*: A vs B is roughly constant, A vs C is roughly linear.
 
 ### 6.4 The divergence is reading-order, not character recognition
 
@@ -246,9 +246,9 @@ Two observations from the table jump out:
 
 1. **Token-set Jaccard remains near 1.00 across the entire CER range.** PyMuPDF and default pdfplumber agree on 99.1 % of unique words extracted from a doc, on the same 30 documents where they disagree on 37 % of characters. Whatever character-level differences appear in the extracted text are *not* explained by either parser failing to find the word — both parsers find the words.
 
-2. **5-gram-sequence Jaccard tracks CER.** The within-Cluster-A pairs (tuned-pdfplumber vs PyMuPDF, PyMuPDF vs pypdf) show 5-gram overlap of 0.95–0.99 alongside CER of 0.006–0.008. The A↔C boundary pairs (PyMuPDF vs default pdfplumber) show 5-gram overlap of 0.60 alongside CER of 0.37. The cross-cluster pairs are not extracting different words — they are *threading the same words together in different orders.*
+2. **5-gram-sequence Jaccard tracks CER.** The within-Cluster-A pairs (tuned-pdfplumber vs PyMuPDF, PyMuPDF vs pypdf) show 5-gram overlap of 0.95–0.99 alongside CER of 0.006–0.008. The A-vs-C boundary pairs (PyMuPDF vs default pdfplumber) show 5-gram overlap of 0.60 alongside CER of 0.37. The cross-cluster pairs are not extracting different words — they are *threading the same words together in different orders.*
 
-**Per-document detail makes this even more visible** on the A↔C boundary (PyMuPDF vs default pdfplumber). On four representative documents:
+**Per-document detail makes this even more visible** on the A-vs-C boundary (PyMuPDF vs default pdfplumber). On four representative documents:
 
 | Document | CER | Jaccard-tokens | Jaccard-5gram |
 |---|---|---|---|
@@ -259,7 +259,7 @@ Two observations from the table jump out:
 
 On IM007, the two parsers extract *exactly* the same unique tokens (Jaccard = 1.000) but emit them in such different orders that fewer than half of the 5-grams overlap. This is the cleanest possible statement of "same words, different sequence."
 
-The corresponding statement for the A↔B boundary (PyMuPDF vs pdfminer) is intermediate: 5-gram overlap settles around 0.72 — pdfminer's layout-analysis pipeline produces an order that is *recognisably similar* to source order but not identical.
+The corresponding statement for the A-vs-B boundary (PyMuPDF vs pdfminer) is intermediate: 5-gram overlap settles around 0.72 — pdfminer's layout-analysis pipeline produces an order that is *recognisably similar* to source order but not identical.
 
 We conclude that the differences observed in §6.2 are not failures of character recognition or word recognition; they are reconstructions of the same character set with different reading orders. This justifies the interpretation in §6.5: once pdfplumber's reading-order heuristic is tuned to source order, the divergence disappears, because there was never any underlying disagreement about *what* was on the page — only about *the order in which to emit it.*
 
@@ -267,7 +267,7 @@ We conclude that the differences observed in §6.2 are not failures of character
 
 Pdfplumber exposes three keyword arguments that control how it groups characters into words and lines: `x_tolerance` and `y_tolerance` (default 3 each) set the pixel windows for horizontal and vertical neighbour-merging; `use_text_flow=True` makes the parser walk the page in document order rather than re-sorting by visual position. We tested a single tuned configuration — `x_tolerance=2, y_tolerance=2, use_text_flow=True` — on the same 30-document corpus.
 
-**The tuned configuration moves pdfplumber from Cluster C to Cluster A.** Mean pairwise CER vs PyMuPDF drops from 0.373 [0.278, 0.463] (default) to 0.006 [0.002, 0.011] (tuned) — a 60× reduction, statistically indistinguishable from the PyMuPDF / pypdf agreement (paired bootstrap mean difference 0.002 [−0.003, 0.008], p = 0.04 against the PyMuPDF / pypdf baseline, attributable to the third decimal place).
+**The tuned configuration moves pdfplumber from Cluster C to Cluster A.** Mean pairwise CER vs PyMuPDF drops from 0.373 [0.278, 0.463] (default) to 0.006 [0.002, 0.011] (tuned) — a 60× reduction, statistically indistinguishable from the PyMuPDF / pypdf agreement (paired bootstrap mean difference 0.002 [-0.003, 0.008], p = 0.04 against the PyMuPDF / pypdf baseline, attributable to the third decimal place).
 
 The interpretation is straightforward: **pdfplumber's default reading-order reconstruction, not pdfplumber-the-library, is the source of the headline divergence**. Practitioners who continue to use pdfplumber at default settings — including users of any framework that wraps pdfplumber without exposing these knobs — are paying a layout-dependent CER cost of up to 0.7 for no benefit we can identify in this experiment.
 
@@ -296,7 +296,7 @@ Three RAG / LLM-application frameworks dominate the open-source ecosystem at the
 | Framework | Conventional ingestion API | Default underlying parser | Cluster | Alternatives the framework also ships |
 |---|---|---|---|---|
 | LangChain (`langchain-community`) | `PyPDFLoader` | **pypdf** | A | `PyMuPDFLoader` (A), `PDFPlumberLoader` (C default), `PDFMinerLoader` (B) |
-| LlamaIndex (`llama-index-readers-file`) | `SimpleDirectoryReader` → `PDFReader` (from `DEFAULT_FILE_READER_CLS`) | **pypdf** | A | `PyMuPDFReader` (A) |
+| LlamaIndex (`llama-index-readers-file`) | `SimpleDirectoryReader` -> `PDFReader` (from `DEFAULT_FILE_READER_CLS`) | **pypdf** | A | `PyMuPDFReader` (A) |
 | Haystack (`deepset-ai/haystack`) | `PDFMinerToDocument` | **pdfminer.six** | B | (no other in-tree PDF converter at time of writing) |
 
 Two practical implications follow:
