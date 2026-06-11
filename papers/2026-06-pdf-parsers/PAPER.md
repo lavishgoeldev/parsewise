@@ -1,9 +1,9 @@
 # Reading-Order Divergence Across PDF Text Parsers: Quantifying Layout-Driven Disagreement and Latency Trade-offs on Consumer Hardware
 
-**Author:** Lavish Goel
-**Affiliation:** Independent Researcher
-**Contact:** lavishgo@gmail.com
-**Status:** Draft v0.1 — 2026-06-11. *Do not cite yet.*
+**Author:** Lavish Goel  
+**Affiliation:** Independent Researcher  
+**Contact:** lavishgo@gmail.com  
+**Status:** Draft v0.1 — 2026-06-11. *Do not cite yet.*  
 **Reproducibility:** scripts, raw records, and corpus at <https://github.com/lavishgoeldev/parsewise>; per-doc licenses in `corpus/real/*.metadata.json`.
 
 ---

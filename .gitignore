@@ -38,3 +38,6 @@ cache/
 
 # Local-only notes — internal planning, not for publication
 notes/
+
+# Paper build intermediates (regeneratable from PAPER.md)
+papers/*/PAPER.html
