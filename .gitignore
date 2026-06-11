@@ -35,3 +35,6 @@ cache/
 # Local config
 .env
 .env.local
+
+# Local-only notes — internal planning, not for publication
+notes/
