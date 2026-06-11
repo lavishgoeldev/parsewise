@@ -344,9 +344,9 @@ Two practical recommendations follow directly from the numbers, without requirin
 
 ---
 
-## 10. Acknowledgements / Author contributions
+## 10. Acknowledgements
 
-Drafting, code, statistical analysis, and figure preparation were carried out by the author in collaboration with Anthropic's Claude (model `claude-opus-4-7`). All claims, methodology decisions, and limitations were reviewed and authored by the human author; the author is responsible for the contents of this paper. We thank the maintainers of PyMuPDF, pdfplumber, pypdf, pdfminer.six, and ReportLab for the open libraries on which this work depends, and the US Internal Revenue Service, US Citizenship and Immigration Services, US Centers for Disease Control and Prevention, US Department of Housing and Urban Development, and Supreme Court of the United States for making their publications available in the public domain.
+We thank the maintainers of PyMuPDF, pdfplumber, pypdf, pdfminer.six, and ReportLab for the open libraries on which this work depends, and the US Internal Revenue Service, US Citizenship and Immigration Services, US Centers for Disease Control and Prevention, US Department of Housing and Urban Development, and Supreme Court of the United States for making their publications available in the public domain.
 
 ---
 
