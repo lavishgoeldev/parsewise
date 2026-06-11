@@ -1,0 +1,15 @@
+{
+  "id": "IM007",
+  "category": "immigration",
+  "doc_type": "im",
+  "source_url": "https://www.uscis.gov/sites/default/files/document/forms/g-28.pdf",
+  "source_organization": "U.S. Citizenship and Immigration Services",
+  "license": "public-domain",
+  "license_verified_at": "2026-06-11",
+  "format": "digital_pdf",
+  "page_count": 4,
+  "language": "en",
+  "added_at": "2026-06-11",
+  "notes": "US federal govt work, public domain by 17 USC \u00a7105. USCIS Form G-28 (Notice of Entry of Appearance)",
+  "sha256": "d73cd620d241b0f8dae1a1be51800568595527e945b00e89814cd8804466a6b1"
+}

@@ -1,0 +1,22 @@
+{
+  "pymupdf vs pdfminer": {
+    "pearson": 0.4810975908292151,
+    "spearman": 0.4255982851525432,
+    "n": 30
+  },
+  "pymupdf vs pdfplumber": {
+    "pearson": 0.7998578699444114,
+    "spearman": 0.6579856333216098,
+    "n": 30
+  },
+  "pymupdf vs pdfplumber_tuned": {
+    "pearson": 0.21802052618777068,
+    "spearman": 0.1782983502284461,
+    "n": 30
+  },
+  "pymupdf vs pypdf": {
+    "pearson": 0.22402223711691596,
+    "spearman": 0.07883309257197213,
+    "n": 30
+  }
+}

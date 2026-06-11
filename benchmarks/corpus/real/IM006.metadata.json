@@ -1,0 +1,15 @@
+{
+  "id": "IM006",
+  "category": "immigration",
+  "doc_type": "im",
+  "source_url": "https://www.uscis.gov/sites/default/files/document/forms/i-90.pdf",
+  "source_organization": "U.S. Citizenship and Immigration Services",
+  "license": "public-domain",
+  "license_verified_at": "2026-06-11",
+  "format": "digital_pdf",
+  "page_count": 7,
+  "language": "en",
+  "added_at": "2026-06-11",
+  "notes": "US federal govt work, public domain by 17 USC \u00a7105. USCIS Form I-90 (Application to Replace Permanent Resident Card)",
+  "sha256": "fd436062284fd572224509e0e17a795f915734f7e7c0fca8a161d0a9976f83a0"
+}

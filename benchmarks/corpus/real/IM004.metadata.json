@@ -1,0 +1,15 @@
+{
+  "id": "IM004",
+  "category": "immigration",
+  "doc_type": "im",
+  "source_url": "https://www.uscis.gov/sites/default/files/document/forms/i-765.pdf",
+  "source_organization": "U.S. Citizenship and Immigration Services",
+  "license": "public-domain",
+  "license_verified_at": "2026-06-11",
+  "format": "digital_pdf",
+  "page_count": 7,
+  "language": "en",
+  "added_at": "2026-06-11",
+  "notes": "US federal govt work, public domain by 17 USC \u00a7105. USCIS Form I-765 (Application for Employment Authorization)",
+  "sha256": "9ac0eae287749d4c2dfa0a591f464cc2124c18647c10e999b59484f090e0dc7d"
+}

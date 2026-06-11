@@ -1,0 +1,106 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://privatevault.example/schemas/document_metadata.schema.json",
+  "title": "Per-document metadata (sidecar JSON next to each PDF)",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "id",
+    "category",
+    "doc_type",
+    "source_url",
+    "source_organization",
+    "license",
+    "license_verified_at",
+    "format",
+    "page_count",
+    "language",
+    "added_at"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^[A-Z]\\d{3}$",
+      "description": "Stable doc id, e.g. L001, I004, M009, IM003, T002. First letter encodes category."
+    },
+    "category": {
+      "enum": ["leases", "invoices", "medical", "immigration", "tax"]
+    },
+    "doc_type": {
+      "type": "string",
+      "description": "Free-text type within the category: 'residential_lease', 'commercial_invoice', 'clinical_trial_protocol', 'I-130_application', 'IRS_form_1040', etc."
+    },
+    "source_url": {
+      "type": "string",
+      "format": "uri",
+      "description": "The exact URL the file was downloaded from. Permanent / archive.org if source is unstable."
+    },
+    "source_organization": {
+      "type": "string",
+      "description": "Publishing entity: 'U.S. Department of Housing and Urban Development', 'The Atticus Project (CUAD)', 'PubMed Central', etc."
+    },
+    "license": {
+      "enum": [
+        "public-domain",
+        "cc0",
+        "cc-by-4.0",
+        "cc-by-sa-4.0",
+        "cc-by-nc-4.0",
+        "cc-by-nc-sa-4.0",
+        "us-government-work",
+        "open-government-license",
+        "other-open"
+      ]
+    },
+    "license_verified_at": {
+      "type": "string",
+      "format": "date",
+      "description": "Date a human confirmed the license claim from the source page."
+    },
+    "format": {
+      "enum": [
+        "digital_pdf",
+        "scan_high",
+        "scan_low",
+        "synthetic_scan",
+        "image_only_pdf"
+      ],
+      "description": "digital_pdf has a real text layer; scan_high/low are real scans; synthetic_scan is digital rendered at lower DPI + noise (we have ground truth text); image_only_pdf is a born-as-images PDF."
+    },
+    "synthetic_scan_params": {
+      "type": "object",
+      "description": "Present only when format == 'synthetic_scan'. Controls reproducibility.",
+      "additionalProperties": false,
+      "properties": {
+        "source_doc_id": { "type": "string" },
+        "dpi": { "type": "integer", "minimum": 50, "maximum": 600 },
+        "rotation_degrees": { "type": "number" },
+        "gaussian_noise_sigma": { "type": "number", "minimum": 0 },
+        "jpeg_quality": { "type": "integer", "minimum": 1, "maximum": 100 },
+        "seed": { "type": "integer" }
+      }
+    },
+    "page_count": { "type": "integer", "minimum": 1 },
+    "language": {
+      "type": "string",
+      "pattern": "^[a-z]{2}(-[A-Z]{2})?$",
+      "description": "BCP-47 short form: 'en', 'en-US', 'es', etc."
+    },
+    "ground_truth_text": {
+      "type": "string",
+      "description": "For format=synthetic_scan or where we manually transcribed: the ground truth text per page (concatenated with form-feed page separators), enabling exact OCR error-rate computation."
+    },
+    "ground_truth_fields": {
+      "type": "object",
+      "description": "Structured fields extractable from the doc, used by Step 0c metrics and Step 8 structured-extraction evaluation. Schema varies by category.",
+      "additionalProperties": true
+    },
+    "used_in_questions": {
+      "type": "array",
+      "items": { "type": "string", "pattern": "^Q\\d{3}$" },
+      "description": "Backreferences to question IDs that cite this doc as ground truth."
+    },
+    "added_at": { "type": "string", "format": "date" },
+    "notes": { "type": "string" }
+  }
+}

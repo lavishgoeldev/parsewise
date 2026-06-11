@@ -1,0 +1,15 @@
+{
+  "id": "L002",
+  "category": "legal",
+  "doc_type": "l",
+  "source_url": "https://www.supremecourt.gov/opinions/24pdf/22-7466_5h25.pdf",
+  "source_organization": "Supreme Court of the United States",
+  "license": "public-domain",
+  "license_verified_at": "2026-06-11",
+  "format": "digital_pdf",
+  "page_count": 82,
+  "language": "en",
+  "added_at": "2026-06-11",
+  "notes": "US federal govt work, public domain by 17 USC \u00a7105. SCOTUS Slip Opinion 22-7466",
+  "sha256": "93c73e3cb1ce00484039309046f75e4358f502b17b65cd0d54d736234a930e0a"
+}

@@ -1,0 +1,15 @@
+{
+  "id": "M001",
+  "category": "medical",
+  "doc_type": "m",
+  "source_url": "https://www.cdc.gov/mmwr/volumes/73/wr/pdfs/mm7301-H.pdf",
+  "source_organization": "U.S. Centers for Disease Control and Prevention",
+  "license": "public-domain",
+  "license_verified_at": "2026-06-10",
+  "format": "digital_pdf",
+  "page_count": 26,
+  "language": "en",
+  "added_at": "2026-06-10",
+  "notes": "US federal govt work, public domain by 17 USC \u00a7105. CDC Yellow Book (CDC publication) \u2014 sample MMWR issue",
+  "sha256": "7e9c6b33b3d9c33a21203ad8de8f7ab7fb169010e6ee33c7685180aa12f2c7fb"
+}

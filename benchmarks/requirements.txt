@@ -1,0 +1,32 @@
+# Benchmark tooling deps (separate from backend/).
+# Install with: pip install -r benchmark/requirements.txt
+
+# HTTP + archival
+httpx>=0.28
+waybackpy>=3.0.6           # Wayback Machine archival for source URL permanence
+
+# PDF + image + OCR (for synthetic-scan generation)
+pymupdf>=1.24
+Pillow>=11.0
+numpy>=2.0
+pypdf>=5.0                 # writing image-only PDFs
+
+# Schema validation
+jsonschema>=4.23
+
+# Step 1 — PDF parser bake-off
+reportlab>=4.2             # generate synthetic PDFs from text in controlled layouts
+pdfplumber>=0.11           # parser candidate
+pypdf>=5.0                 # parser candidate (also used by download script)
+# pymupdf already pinned above
+python-Levenshtein>=0.26   # fast CER / WER computation
+
+# Step 2 — OCR engine bake-off
+pytesseract>=0.3.13        # Tesseract wrapper (also needs `brew install tesseract`)
+# easyocr>=1.7             # heavy (pulls PyTorch ~2GB); uncomment when ready for Step 2.B
+
+# BEIR (loaded lazily; commented out so a partial install still works)
+# beir>=2.0                # uncomment when you want BEIR datasets
+
+# Dataset publishing (used later in Step 10)
+# datasets>=3.0            # HuggingFace Datasets — enable when we publish

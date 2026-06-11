@@ -1,0 +1,15 @@
+{
+  "id": "T006",
+  "category": "tax",
+  "doc_type": "t",
+  "source_url": "https://www.irs.gov/pub/irs-pdf/fw4.pdf",
+  "source_organization": "U.S. Internal Revenue Service",
+  "license": "public-domain",
+  "license_verified_at": "2026-06-11",
+  "format": "digital_pdf",
+  "page_count": 5,
+  "language": "en",
+  "added_at": "2026-06-11",
+  "notes": "US federal govt work, public domain by 17 USC \u00a7105. IRS Form W-4 (Employee's Withholding Certificate)",
+  "sha256": "92444d8856ce55d9e25dca8b6d1420634fc68b11e1ab1f760916ea29ddd312b2"
+}

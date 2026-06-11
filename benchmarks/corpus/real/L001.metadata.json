@@ -1,0 +1,15 @@
+{
+  "id": "L001",
+  "category": "legal",
+  "doc_type": "l",
+  "source_url": "https://www.supremecourt.gov/opinions/24pdf/23-477_2cp3.pdf",
+  "source_organization": "Supreme Court of the United States",
+  "license": "public-domain",
+  "license_verified_at": "2026-06-11",
+  "format": "digital_pdf",
+  "page_count": 118,
+  "language": "en",
+  "added_at": "2026-06-11",
+  "notes": "US federal govt work, public domain by 17 USC \u00a7105. SCOTUS Slip Opinion 23-477 (United States v. Skrmetti)",
+  "sha256": "85fb5ba49289e9d7908024b83f67b4c5dd03b7a68deae061af098f85dcb0323f"
+}

@@ -1,0 +1,84 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://privatevault.example/schemas/question.schema.json",
+  "title": "Single question record (one per line in questions/questions.jsonl)",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "id",
+    "question",
+    "category",
+    "question_type",
+    "expected_behavior",
+    "difficulty",
+    "ground_truth"
+  ],
+  "properties": {
+    "id": { "type": "string", "pattern": "^Q\\d{3}$" },
+    "question": { "type": "string", "minLength": 4 },
+    "category": {
+      "enum": ["leases", "invoices", "medical", "immigration", "tax", "cross_category"],
+      "description": "Which corpus category the question targets, or 'cross_category' for retrieval-across-types questions."
+    },
+    "question_type": {
+      "enum": [
+        "factual_lookup",
+        "multi_chunk_synthesis",
+        "summarization",
+        "structured_filter",
+        "multi_hop",
+        "refusal"
+      ],
+      "description": "Used for per-type metric breakdown in the paper."
+    },
+    "expected_behavior": {
+      "enum": ["answer", "refuse"],
+      "description": "'refuse' questions have no answer in the corpus; the system should say so."
+    },
+    "difficulty": {
+      "enum": ["easy", "medium", "hard"],
+      "description": "Coarse label; used for stratified reporting."
+    },
+    "ground_truth": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["answer_text", "citations"],
+      "properties": {
+        "answer_text": {
+          "type": "string",
+          "description": "Reference answer. Empty string for expected_behavior='refuse'."
+        },
+        "answer_normalized": {
+          "type": "string",
+          "description": "Optional canonical form for exact-match metric: '2026-07-31' instead of 'July 31, 2026'."
+        },
+        "citations": {
+          "type": "array",
+          "minItems": 0,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["doc_id", "page"],
+            "properties": {
+              "doc_id": { "type": "string", "pattern": "^[A-Z]+\\d{3}$" },
+              "page": { "type": "integer", "minimum": 1 },
+              "span": {
+                "type": "string",
+                "description": "Exact text span on the page that contains the answer; used for citation-span precision."
+              }
+            }
+          }
+        },
+        "answer_type": {
+          "enum": ["text", "date", "money", "name", "boolean", "number", "list"],
+          "description": "Used by exact-match metric to apply type-aware normalization."
+        }
+      }
+    },
+    "rationale": {
+      "type": "string",
+      "description": "Free-text note from the question author explaining why this question is in the set (e.g. 'tests OCR robustness; answer span sits on noisy page')."
+    },
+    "added_at": { "type": "string", "format": "date" }
+  }
+}

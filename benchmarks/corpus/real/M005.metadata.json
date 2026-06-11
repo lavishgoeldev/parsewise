@@ -1,0 +1,15 @@
+{
+  "id": "M005",
+  "category": "medical",
+  "doc_type": "m",
+  "source_url": "https://www.cdc.gov/mmwr/volumes/73/wr/pdfs/mm7341-H.pdf",
+  "source_organization": "U.S. Centers for Disease Control and Prevention",
+  "license": "public-domain",
+  "license_verified_at": "2026-06-11",
+  "format": "digital_pdf",
+  "page_count": 29,
+  "language": "en",
+  "added_at": "2026-06-11",
+  "notes": "US federal govt work, public domain by 17 USC \u00a7105. CDC MMWR Vol 73 No 41 (Oct 17, 2024)",
+  "sha256": "e75dd4c555cebaf53ac81a49fceed05c4dd9473facea99b3267d5685b31ced9c"
+}

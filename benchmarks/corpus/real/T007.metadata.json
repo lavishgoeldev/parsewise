@@ -1,0 +1,15 @@
+{
+  "id": "T007",
+  "category": "tax",
+  "doc_type": "t",
+  "source_url": "https://www.irs.gov/pub/irs-pdf/p463.pdf",
+  "source_organization": "U.S. Internal Revenue Service",
+  "license": "public-domain",
+  "license_verified_at": "2026-06-11",
+  "format": "digital_pdf",
+  "page_count": 62,
+  "language": "en",
+  "added_at": "2026-06-11",
+  "notes": "US federal govt work, public domain by 17 USC \u00a7105. IRS Publication 463 (Travel, Gift, and Car Expenses)",
+  "sha256": "ddc3bb15e437bd65c37da2036debdae78c1a0bf5a080b19d5301c81f5ec5ae5d"
+}

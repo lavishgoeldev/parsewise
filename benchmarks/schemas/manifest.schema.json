@@ -1,0 +1,48 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://privatevault.example/schemas/manifest.schema.json",
+  "title": "Global corpus manifest (benchmark/corpus/manifest.json)",
+  "description": "Index of every document in the corpus. Generated; do not edit by hand. Run scripts/build_manifest.py to regenerate.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["version", "generated_at", "total_documents", "by_category", "by_format", "license_summary", "documents"],
+  "properties": {
+    "version": {
+      "type": "string",
+      "pattern": "^\\d+\\.\\d+(\\.\\d+)?$",
+      "description": "Benchmark dataset version. Bump for any corpus or question-set change."
+    },
+    "generated_at": { "type": "string", "format": "date-time" },
+    "total_documents": { "type": "integer", "minimum": 0 },
+    "by_category": {
+      "type": "object",
+      "description": "Count of docs per category.",
+      "patternProperties": { "^[a-z_]+$": { "type": "integer" } }
+    },
+    "by_format": {
+      "type": "object",
+      "patternProperties": { "^[a-z_]+$": { "type": "integer" } }
+    },
+    "license_summary": {
+      "type": "object",
+      "patternProperties": { "^[a-z0-9._-]+$": { "type": "integer" } }
+    },
+    "documents": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "category", "relative_path", "license", "format", "sha256"],
+        "properties": {
+          "id": { "type": "string", "pattern": "^[A-Z]+\\d{3}$" },
+          "category": { "type": "string" },
+          "relative_path": { "type": "string" },
+          "license": { "type": "string" },
+          "format": { "type": "string" },
+          "sha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+          "size_bytes": { "type": "integer", "minimum": 0 }
+        }
+      }
+    }
+  }
+}

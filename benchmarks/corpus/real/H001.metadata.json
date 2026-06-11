@@ -1,0 +1,15 @@
+{
+  "id": "H001",
+  "category": "housing",
+  "doc_type": "h",
+  "source_url": "https://www.hud.gov/sites/dfiles/OCHCO/documents/90105a.pdf",
+  "source_organization": "U.S. Department of Housing and Urban Development",
+  "license": "public-domain",
+  "license_verified_at": "2026-06-11",
+  "format": "digital_pdf",
+  "page_count": 15,
+  "language": "en",
+  "added_at": "2026-06-11",
+  "notes": "US federal govt work, public domain by 17 USC \u00a7105. HUD Model Lease for Subsidized Programs (HUD-90105a)",
+  "sha256": "ae735de3c9619a2bb7f2431db1d06e2476468d627e82232fe463815b08b78754"
+}

@@ -1,0 +1,15 @@
+{
+  "id": "T001",
+  "category": "tax",
+  "doc_type": "t",
+  "source_url": "https://www.irs.gov/pub/irs-pdf/f1040.pdf",
+  "source_organization": "U.S. Internal Revenue Service",
+  "license": "public-domain",
+  "license_verified_at": "2026-06-10",
+  "format": "digital_pdf",
+  "page_count": 2,
+  "language": "en",
+  "added_at": "2026-06-10",
+  "notes": "US federal govt work, public domain by 17 USC \u00a7105. IRS Form 1040 (2023)",
+  "sha256": "3d31c226df0d189ced80e039d01cf0f8820c1019681a0f0ca6264de277b7e982"
+}

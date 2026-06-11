@@ -1,0 +1,15 @@
+{
+  "id": "IM002",
+  "category": "immigration",
+  "doc_type": "im",
+  "source_url": "https://www.uscis.gov/sites/default/files/document/forms/n-400.pdf",
+  "source_organization": "U.S. Citizenship and Immigration Services",
+  "license": "public-domain",
+  "license_verified_at": "2026-06-10",
+  "format": "digital_pdf",
+  "page_count": 14,
+  "language": "en",
+  "added_at": "2026-06-10",
+  "notes": "US federal govt work, public domain by 17 USC \u00a7105. USCIS Form N-400 \u2014 Application for Naturalization",
+  "sha256": "8b33868ba071e261bf5e8d87d9667860d1f6d2c4de76101eb1e674404a82d909"
+}

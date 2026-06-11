@@ -1,0 +1,37 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+.pytest_cache/
+.coverage
+.tox/
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Editor / IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+.DS_Store
+
+# Build / dist
+build/
+dist/
+*.egg-info/
+
+# Benchmark intermediate caches (large; regeneratable)
+benchmarks/cache/
+cache/
+
+# Logs
+*.log
+
+# Local config
+.env
+.env.local

@@ -1,0 +1,15 @@
+{
+  "id": "IM003",
+  "category": "immigration",
+  "doc_type": "im",
+  "source_url": "https://www.uscis.gov/sites/default/files/document/forms/i-485.pdf",
+  "source_organization": "U.S. Citizenship and Immigration Services",
+  "license": "public-domain",
+  "license_verified_at": "2026-06-11",
+  "format": "digital_pdf",
+  "page_count": 24,
+  "language": "en",
+  "added_at": "2026-06-11",
+  "notes": "US federal govt work, public domain by 17 USC \u00a7105. USCIS Form I-485 (Application to Register Permanent Residence)",
+  "sha256": "7c8e1c5242d680b2bc0bfa7d8026e0c3fc8e32bbe52c55648fb5078703122423"
+}

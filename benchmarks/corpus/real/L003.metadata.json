@@ -1,0 +1,15 @@
+{
+  "id": "L003",
+  "category": "legal",
+  "doc_type": "l",
+  "source_url": "https://www.supremecourt.gov/opinions/23pdf/23-719_19m2.pdf",
+  "source_organization": "Supreme Court of the United States",
+  "license": "public-domain",
+  "license_verified_at": "2026-06-11",
+  "format": "digital_pdf",
+  "page_count": 20,
+  "language": "en",
+  "added_at": "2026-06-11",
+  "notes": "US federal govt work, public domain by 17 USC \u00a7105. SCOTUS Slip Opinion 23-719",
+  "sha256": "f3015ab4890996a0cb1f1cb3e943cf27d2d6a58ced20f8dbdc3d06e79c15d07a"
+}

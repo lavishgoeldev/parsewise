@@ -1,0 +1,15 @@
+{
+  "id": "T005",
+  "category": "tax",
+  "doc_type": "t",
+  "source_url": "https://www.irs.gov/pub/irs-pdf/fw9.pdf",
+  "source_organization": "U.S. Internal Revenue Service",
+  "license": "public-domain",
+  "license_verified_at": "2026-06-11",
+  "format": "digital_pdf",
+  "page_count": 6,
+  "language": "en",
+  "added_at": "2026-06-11",
+  "notes": "US federal govt work, public domain by 17 USC \u00a7105. IRS Form W-9 (Request for Taxpayer Identification Number)",
+  "sha256": "2d420cbb4123dcf1fb82595b2359cfbb5d81f00b9df9d359fcc7af361d093f53"
+}

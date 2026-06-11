@@ -1,0 +1,15 @@
+{
+  "id": "IM008",
+  "category": "immigration",
+  "doc_type": "im",
+  "source_url": "https://www.uscis.gov/sites/default/files/document/forms/i-485instr.pdf",
+  "source_organization": "U.S. Citizenship and Immigration Services",
+  "license": "public-domain",
+  "license_verified_at": "2026-06-11",
+  "format": "digital_pdf",
+  "page_count": 42,
+  "language": "en",
+  "added_at": "2026-06-11",
+  "notes": "US federal govt work, public domain by 17 USC \u00a7105. USCIS Form I-485 Instructions",
+  "sha256": "6630a6a2dc732b84fc4744d7c1e16ef90832c8b2a5aaa2f9471a602ac5d00f9a"
+}

@@ -1,0 +1,71 @@
+Morbidity and Mortality Weekly Report
+U.S. Centers for Disease Control and Prevention
+Weekly / Vol. 73 / No. 41	
+October 17, 2024
+INSIDE
+917	 Tobacco Product Use Among Middle and High 
+School Students — National Youth Tobacco Survey, 
+United States, 2024
+925	 Coverage with Selected Vaccines and Exemption 
+Rates Among Children in Kindergarten — United 
+States, 2023–24 School Year
+933	 Notes from the Field: Enhanced Surveillance for 
+Raccoon Rabies Virus Variant and Vaccination of 
+Wildlife for Management — Omaha, Nebraska, 
+October 2023–July 2024 
+936	 QuickStats
+Continuing Education examination available at 
+https://www.cdc.gov/mmwr/mmwr_continuingEducation.html
+Update on Vaccine-Derived Poliovirus Outbreaks — 
+Worldwide, January 2023–June 2024
+Apophia Namageyo-Funa, PhD1; Sharon A. Greene, PhD1; Elizabeth Henderson2; Mohamed A. Traoré3; Shahzad Shaukat, PhD3; John Paul Bigouette, PhD1; 
+Jaume Jorba, PhD2; Eric Wiesen, DrPH1; Omotayo Bolu, PhD1; Ousmane M. Diop, PhD3; Cara C. Burns, PhD2; Steven G.F. Wassilak, MD1
+Abstract
+Circulating vaccine-derived polioviruses (cVDPVs) can 
+emerge and lead to outbreaks of paralytic polio as well as 
+asymptomatic transmission in communities with a high percent­
+age of undervaccinated children. Using data from the World 
+Health Organization Polio Information System and Global 
+Polio Laboratory Network, this report describes global polio 
+outbreaks due to cVDPVs during January 2023–June 2024 
+and updates previous reports. During the reporting period, 
+74 cVDPV outbreaks were detected in 39 countries or areas 
+(countries), predominantly in Africa. Among these 74 cVDPV 
+outbreaks, 47 (64%) were new outbreaks, detected in 30 (77%) 
+of the 39 countries. Three countries reported cVDPV type 1 
+(cVDPV1) outbreaks and 38 countries reported cVDPV type 
+2 (cVDPV2) outbreaks; two of these countries reported cocir­
+culating cVDPV1 and cVDPV2. In the 38 countries with 
+cVDPV2 transmission, 70 distinct outbreaks were reported. 
+In 15 countries, cVDPV transmission has lasted >1 year into 
+2024. In Nigeria and Somalia, both countries with security-
+compromised areas, persistent cVDPV2 transmission has spread 
+to neighboring countries. Delayed implementation of outbreak 
+response campaigns and low-quality campaigns have resulted in 
+further international spread. Countries can control cVDPV out­
+breaks with timely allocation of resources to implement prompt, 
+high-quality responses after outbreak confirmation. Stopping all 
+cVDPV transmission requires effectively increasing population 
+immunity by overcoming barriers to reaching children.
+Introduction
+Live, attenuated oral poliovirus vaccine (OPV) induces 
+long-term protection against paralytic disease, and limits virus 
+shedding in vaccinated persons with infection (1). Circulating 
+vaccine-derived poliovirus (cVDPVs)* outbreaks occur when 
+OPV-related strains undergo prolonged circulation in com­
+munities with very low immunity against polioviruses, and the 
+genetically reverted virus has regained neurovirulence (vaccine-
+derived poliovirus [VDPV] emergence) (2,3). After declaration 
+of wild poliovirus type 2 eradication in 2015, and in an effort 
+to lower the risk for cVDPV type 2 (cVDPV2) outbreaks, 
+immunization programs in countries using OPV switched 
+from using trivalent OPV (tOPV) (containing types 1, 2, and 
+3 Sabin strains) in routine and supplementary immunization 
+activities (SIAs) to bivalent OPV (bOPV) (containing types 1 
+*	By genomic sequence analysis of the region encoding capsid viral protein 1, a 
+poliovirus with >1% divergence from the parent Sabin strain for serotypes 1 
+and 3, or >0.6% for serotype 2, is classified as a vaccine-derived poliovirus 
+(VDPV). Evidence of circulation (i.e., a cVDPV outbreak) occurs when two 
+or more independent detections of genetically linked VDPVs are identified 
+through acute flaccid paralysis (AFP) surveillance, environmental surveillance 
+(ES), or from healthy community members.
