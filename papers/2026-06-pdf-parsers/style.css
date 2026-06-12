@@ -14,10 +14,17 @@
 html {
     font-family: "Times New Roman", Times, "Liberation Serif", serif;
     font-size: 10.5pt;
-    line-height: 1.45;
+    line-height: 1.5;
     color: #111;
-    text-align: justify;
-    hyphens: auto;
+    /* Left-aligned: avoids the awkward inter-word gaps that justified text
+       produces when lines contain long inline code blocks. Many modern
+       academic templates use left-aligned for the same reason. */
+    text-align: left;
+    /* No automatic hyphenation: keeps words intact at line breaks. */
+    hyphens: none;
+    /* Enable kerning + standard ligatures for cleaner typography. */
+    font-kerning: normal;
+    font-feature-settings: "kern", "liga";
 }
 
 body {
