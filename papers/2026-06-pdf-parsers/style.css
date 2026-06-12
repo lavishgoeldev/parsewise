@@ -165,6 +165,36 @@ hr {
     margin: 1em 0;
 }
 
+/* Figures — scale to page-content width and keep with caption. */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0.4em auto;
+}
+
+p img + em,
+p > img {
+    /* Markdown renders an image + alt-text as a paragraph; treat that
+       paragraph as a figure block: center and protect from splitting. */
+    page-break-inside: avoid;
+}
+
+/* The paragraph containing the image (= the figure block in our Markdown
+   convention) should not split between figure and caption. */
+p:has(img) {
+    page-break-inside: avoid;
+    text-align: center;
+    margin-top: 0.8em;
+    margin-bottom: 0.8em;
+}
+
+/* Caption text inside the figure paragraph — left-align so it reads as
+   normal paper text rather than centered. */
+p:has(img) {
+    text-align: left;
+}
+
 /* Strong emphasis stays bold but a touch darker than text */
 strong {
     color: #000;

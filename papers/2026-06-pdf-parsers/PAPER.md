@@ -26,7 +26,7 @@ We make no normative claim that any parser is "correct" — no canonical ground-
 
 ## 1. Introduction
 
-The end-to-end quality of a Retrieval-Augmented Generation (RAG) pipeline is bounded above by the text the document parser surfaces. If a page enters the chunker as a different string than it would have been with another parser, downstream retrieval, ranking, and generation operate on a different reality. Despite this, parser choice in production systems is overwhelmingly determined by framework defaults: LangChain ships `pypdf`, LlamaIndex ships `PyMuPDF`, Haystack ships `pdfplumber`/`Tika`. None of these defaults is justified in a single peer-reviewed comparison that we are aware of.
+The end-to-end quality of a Retrieval-Augmented Generation (RAG) pipeline is bounded above by the text the document parser surfaces. If a page enters the chunker as a different string than it would have been with another parser, downstream retrieval, ranking, and generation operate on a different reality. Despite this, parser choice in production systems is overwhelmingly determined by framework defaults. We confirm in §6.7 by reading the current `main`-branch source of each framework that LangChain's `PyPDFLoader` and LlamaIndex's `SimpleDirectoryReader` both ship `pypdf` as the underlying engine, while Haystack ships `pdfminer.six` via `PDFMinerToDocument`. No framework we examined ships `pdfplumber` as a default. None of these defaults is justified in a single peer-reviewed comparison that we are aware of.
 
 The community guidance that does exist is anecdotal: blog posts asserting one parser is "best for forms" or "best for academic papers," typically without measurement on a shared corpus. We aim to put hard numbers on the question: **given the same input PDF, do the popular parsers produce the same text? If not, by how much, and where?**
 
@@ -46,13 +46,13 @@ What this paper deliberately does **not** cover. We are studying text extraction
 
 ## 2. Related Work
 
-**RAG benchmarks.** The dominant RAG/IR benchmarks — BEIR [Thakur 2021], MS MARCO [Nguyen 2016], Natural Questions [Kwiatkowski 2019], HotpotQA [Yang 2018], FiQA-2018 — provide pre-tokenized text and treat document parsing as out of scope. Models can thus be compared on retrieval and generation but not on the upstream parsing step.
+**RAG benchmarks.** The dominant RAG/IR benchmarks — BEIR [1], MS MARCO [2], Natural Questions [3], HotpotQA [4], FiQA-2018 [5] — provide pre-tokenized text and treat document parsing as out of scope. Models can thus be compared on retrieval and generation but not on the upstream parsing step.
 
 **Visual document understanding.** DocVQA [6] and VisualMRC [7] evaluate end-to-end visual document question-answering but assume image rendering as input and bypass text-layer extraction.
 
-**Practitioner tools.** A wave of recent open-source tools (Docling [IBM 2024], Marker [Vik 2024], Unstructured.io, Nougat [Meta 2023]) aim at better document structure rather than raw text extraction. Their relationship to the text-layer parsers we study here is paradigm-distinct — they layer ML models on top of one of the parsers below. Comparing them directly to a lightweight text parser is out of scope for v0.1; we revisit in §7.
+**Practitioner tools.** A wave of recent open-source tools — Docling [8], Marker [9], Nougat [10], and Unstructured.io [11] — aim at better document structure rather than raw text extraction. Their relationship to the text-layer parsers we study here is paradigm-distinct: they layer ML models on top of one of the parsers below. Comparing them directly to a lightweight text parser is out of scope for v0.1; we revisit in §7.
 
-**The parsers themselves.** PyMuPDF/MuPDF, pdfplumber, pypdf (formerly PyPDF2), and pdfminer.six each ship developer-facing notes acknowledging that reading-order reconstruction is best-effort. None of those notes quantifies the practical disagreement on a public corpus.
+**The parsers themselves.** PyMuPDF/MuPDF [12], pdfplumber [13], pypdf (formerly PyPDF2) [14], and pdfminer.six [15] each ship developer-facing notes acknowledging that reading-order reconstruction is best-effort. None of those notes quantifies the practical disagreement on a public corpus.
 
 To our knowledge no peer-reviewed paper has measured inter-parser agreement on a real-world corpus large enough to support bootstrap inference. This work fills that gap.
 
@@ -190,6 +190,8 @@ Two implications follow immediately:
 * The default-pdfplumber divergence (Cluster C) is not a quality issue. *Tuned* pdfplumber sits on top of *exactly* the same C library as default pdfplumber and joins Cluster A. The problem is the default-config reading-order heuristic, not the underlying parser.
 
 ### 6.3 Layout complexity drives the A-vs-C divergence
+
+![**Figure 1.** Pairwise CER vs layout complexity, four representative parser pairs. Top-right: PyMuPDF vs default pdfplumber (A vs C boundary) shows the strongest correlation — divergence scales nearly linearly with layout complexity (Pearson r = 0.80). Top-left: PyMuPDF vs pdfminer (A vs B boundary) shows a modest correlation (r = 0.48) — pdfminer disagrees regardless of layout. Bottom-left: PyMuPDF vs *tuned* pdfplumber (within Cluster A) shows essentially no relationship (r = 0.22) — they agree across the complexity range. Bottom-right: PyMuPDF vs pypdf (within Cluster A) shows the same pattern (r = 0.22). Categories: housing (red), immigration (orange), legal (purple), medical (green), tax (blue). n = 30 documents.](figures/fig_complexity_vs_cer.png)
 
 A per-document scatter of layout-complexity score against pairwise CER (Figure 1) shows the A vs C divergence is concentrated in layout-complex documents. Per pair, Pearson correlations:
 
